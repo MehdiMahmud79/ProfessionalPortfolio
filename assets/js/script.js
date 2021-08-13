@@ -91,17 +91,17 @@ projects.forEach(project => {
   if(project.lang.CSS) css=`<div class="progress-bar bg-danger text-dark" role="progressbar" style="width:${project.lang.CSS}%"> ${project.lang.CSS}%</div>`;
 
   var mycard = `
-  <div class="col my-3 gradient-custom d-flex align-items-stretch card-container ">
+  <div class="col my-2 gradient-custom d-flex align-items-stretch card-container ">
   <div class="card border-warning m-2">
     <img src="${project.project_img}" class="card-img-top " alt="..."/>
-    <div class="  bg-dark d-flex justify-content-around">
+    <div class="  bg-success d-flex justify-content-around">
       <a type="button" href="${project.gitHub_Url}" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
-      <a type="button" href="${project.description}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
+      <a type="button" href="${project.project_Url}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
     </div>
 
     <div class="card-body">
       <h5 class="card-title">${project.projectName}</h5>
-      <p class="card-text">${project.project_Url}</p>
+      <p class="card-text">${project.description}</p>
     </div>
     <div class="progress m-2 ">
     ${html}
