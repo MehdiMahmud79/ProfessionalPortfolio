@@ -14,11 +14,11 @@
     padding:0;
 
 }
-.card a:hover {
+.project-fetched .card a:hover {
     transform: scale(1.1);
     transition: all 0.3s easein-out;
 }
-.card:hover {
+.project-fetched  .card:hover {
     opacity:0.9;
     transform: scale(1.02);
     transition: all 0.5s easein-out;

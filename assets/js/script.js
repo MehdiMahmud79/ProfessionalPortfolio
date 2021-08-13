@@ -8,6 +8,8 @@ var htmlCount=[];
 var cssCount1=""
 var jsCount1=""
 var htmlCount1=""
+
+$(document).ready(function () {
 getApi();
 
 function getApi() {
@@ -86,15 +88,23 @@ projects.forEach(project => {
   var css=''
   var js=''
   var html=''
-  if(project.lang.HTML) html=`<div class="progress-bar bg-success text-dark" role="progressbar" style="width:${project.lang.HTML}%"> ${project.lang.HTML}%</div>`;
-  if(project.lang.JavaScript) js=`<div class="progress-bar bg-warning text-dark" role="progressbar" style="width:${project.lang.JavaScript}%"> ${project.lang.JavaScript}%</div>`;
-  if(project.lang.CSS) css=`<div class="progress-bar bg-danger text-dark" role="progressbar" style="width:${project.lang.CSS}%"> ${project.lang.CSS}%</div>`;
+// change the width of the progress bar to  make it visible for small values
+  let htmlWidth=project.lang.HTML;
+  if(htmlWidth<=20)htmlWidth=20;
+  let cssWidth= project.lang.CSS;
+  if(cssWidth<=20)cssWidth=20;
+  let jsWidth= project.lang.JavaScript;
+  if(jsWidth<=20)jsWidth=20; 
+
+  if(project.lang.HTML) html=`<div class="progress-bar bg-success text-dark" role="progressbar" style="width:${htmlWidth}%"> HTML: ${project.lang.HTML}%</div>`;
+  if(project.lang.JavaScript) js=`<div class="progress-bar bg-warning text-dark" role="progressbar" style="width:${jsWidth}%">Js: ${project.lang.JavaScript}%</div>`;
+  if(project.lang.CSS) css=`<div class="progress-bar bg-danger text-dark" role="progressbar" style="width:${cssWidth}%">CSS: ${project.lang.CSS}%</div>`;
 
   var mycard = `
   <div class="col my-2 gradient-custom d-flex align-items-stretch card-container ">
   <div class="card border-warning m-2">
     <img src="${project.project_img}" class="card-img-top " alt="..."/>
-    <div class="  bg-success d-flex justify-content-around">
+    <div class="  bg-light d-flex justify-content-around">
       <a type="button" href="${project.gitHub_Url}" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
       <a type="button" href="${project.project_Url}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
     </div>
@@ -143,10 +153,10 @@ $('#progressCss span').text( `${cssCount1}%`)
 $('#progressJs').attr("style", `width: ${jsCount1}%`)
 $('#progressJs span').text( `${jsCount1}%`)
 
-},600)
+},700)
 
 // log(cssCount, jsCount, htmlCount)
-$(document).ready(function () {
+
   // typing text animation script
 
   var typed = new Typed(".skillTitle span", {
@@ -179,3 +189,9 @@ $(document).ready(function () {
     loop: true,
   });
 });
+window.onload = function() {
+	if(!window.location.hash) {
+		window.location = window.location + '#loaded';
+		window.location.reload();
+	}
+}
