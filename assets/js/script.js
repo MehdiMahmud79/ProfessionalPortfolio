@@ -133,8 +133,8 @@ setTimeout(function () {
   // };
 
   var mycard = `
-  <div class="col my-3 gradient-custom">
-  <div class="card">
+  <div class="col my-3 gradient-custom d-flex align-items-stretch ">
+  <div class="card border-warning m-2">
     <img src="${project.project_img}" class="card-img-top " alt="..."/>
     <div class="  bg-dark d-flex justify-content-around">
       <a type="button" href="${project.gitHub_Url}" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>

@@ -2,9 +2,10 @@
     transform: scale(1.1);
     transition: all 0.3s easein-out;
 }
-.card img:hover {
+.card:hover {
     opacity:0.9;
-    transition: all 0.3s easein-out;
+    transform: scale(1.02);
+    transition: all 0.5s easein-out;
 }
 
 .gradient-custom:hover {
