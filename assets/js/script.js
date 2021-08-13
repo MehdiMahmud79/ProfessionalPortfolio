@@ -2,6 +2,12 @@ var projects = [];
 var projects_lang = [];
 var projObj={};
 const log=console.log;
+var cssCount=[];
+var jsCount=[];
+var htmlCount=[];
+var cssCount1=""
+var jsCount1=""
+var htmlCount1=""
 getApi();
 
 function getApi() {
@@ -51,11 +57,12 @@ setTimeout(function () {
   }
   myFetch().then((data2) => {
     // console.log(data2);
+
     let sum1 = 0;
     let lanObj = {};
-    if (data2.CSS) sum1 += data2.CSS;
-    if (data2.HTML) sum1 += data2.HTML;
-    if (data2.JavaScript) sum1 += data2.JavaScript;
+    if (data2.CSS) {sum1 += data2.CSS; cssCount.push(data2.CSS)};
+    if (data2.HTML) {sum1 += data2.HTML; htmlCount.push(data2.HTML)};
+    if (data2.JavaScript) {sum1 += data2.JavaScript; jsCount.push(data2.JavaScript)};
 
     if (data2.CSS)
       lanObj.CSS = `${Math.round((data2.CSS / sum1) * 100)}`;
@@ -66,8 +73,7 @@ setTimeout(function () {
         (data2.JavaScript / sum1) * 100)}`;
 
       project.lang=  lanObj;
-
-  }).catch(e => console.log(e));
+    }).catch(e => console.log(e));
 
   })
   
@@ -76,6 +82,7 @@ setTimeout(function () {
 
 setTimeout(function () {
 projects.forEach(project => {
+
   var css=''
   var js=''
   var html=''
@@ -108,10 +115,37 @@ projects.forEach(project => {
 
 `;
   $(".project-fetched").append(mycard);
-})
-}, 500); //wait 2 seconds
-log(projects)
+});
 
+log(cssCount)
+log(jsCount)
+log(htmlCount)
+
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+var cssavg= cssCount.reduce(reducer);
+var jsavg= jsCount.reduce(reducer);
+var htmlavg= htmlCount.reduce(reducer);
+var sumLang=cssavg +jsavg+htmlavg;
+log(sumLang)
+ cssCount1=`${Math.round(cssavg / sumLang * 100)}`
+ jsCount1=`${Math.round(jsavg / sumLang * 100)}`
+ htmlCount1=`${Math.round(htmlavg / sumLang * 100)}`
+}, 500); //wait 2 seconds
+
+setTimeout(function () {
+log('hh',cssCount1,jsCount1,htmlCount1)
+
+$('#progressHTML').attr("style", `width: ${htmlCount1}%`)
+$('#progressHTML span').text( `${htmlCount1}%`)
+$('#progressCss').attr("style", `width: ${cssCount1}%`)
+$('#progressCss span').text( `${cssCount1}%`)
+$('#progressJs').attr("style", `width: ${jsCount1}%`)
+$('#progressJs span').text( `${jsCount1}%`)
+
+},600)
+
+// log(cssCount, jsCount, htmlCount)
 $(document).ready(function () {
   // typing text animation script
 

@@ -12,11 +12,11 @@ Using Github API to generate a proffesional protfolio of my upto date projects.
 # Features
 
 ```
-* Using Github API
-* Using Bootstrap for styling
+* Using Github API.
+* Using Bootstrap 5.0 for styling.
 * Using Github languages for progressing bars.
 * jQuery to write the javascript cosing.
-* Fontawesome to add icons to the page.
+* Font Awesome to add icons to the page.
 * cloudflare Typed Library.
 ```
 
@@ -26,7 +26,6 @@ Using Github API to generate a proffesional protfolio of my upto date projects.
 The following animation shows the web application's appearance and functionality:
 
 ![portfolio demo](./assets/screen.gif)
-
 
 
 ## Websites
