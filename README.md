@@ -11,7 +11,7 @@ Experience in software, IT and research. I completed a PhD in Applied Mathematic
 
 The following animation shows the web application's appearance and functionality:
 
-![portfolio demo](./Assets/images/Portfolio.gif)
+![portfolio demo](./assets/screen.gif)
 
 
 
