@@ -133,7 +133,7 @@ setTimeout(function () {
   // };
 
   var mycard = `
-  <div class="col my-3 gradient-custom d-flex align-items-stretch ">
+  <div class="col my-3 gradient-custom d-flex align-items-stretch card-container ">
   <div class="card border-warning m-2">
     <img src="${project.project_img}" class="card-img-top " alt="..."/>
     <div class="  bg-dark d-flex justify-content-around">
