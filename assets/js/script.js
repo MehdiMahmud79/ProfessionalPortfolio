@@ -1,13 +1,11 @@
-var projects = [];
-var projects_lang = [];
-var projObj={};
+var projects = SavedProjects;
 const log=console.log;
 var cssCount=[];
 var jsCount=[];
 var htmlCount=[];
-var cssCount1=""
-var jsCount1=""
-var htmlCount1=""
+var cssCount1="";
+var jsCount1="";
+var htmlCount1="";
 var owner = 'MehdiMahmud79';
 
 $(document).ready(function () {
@@ -22,6 +20,7 @@ function getApi() {
       return response.json();
     })
     .then(function (data) {
+      projects=[];
       // this is just to update the id for recreated reposotory 
       data.find(obj => obj.name === "SimplePortfolio").id-= 15000000
       // sort the reposotories according to created date
@@ -29,25 +28,27 @@ function getApi() {
       for (var i = 0; i < data.length; i++) {
         var repo = data[i].name;
         var sha = 'main';
-       const commitCount=0
-      //  get_all_commits_count(owner, repo, sha)
+       
         var proj_name = data[i].name;
         projectUrl = `https://${owner}.github.io/${proj_name}/`;
 
-         projObj= {
+        let projObj= {
           projectName: proj_name,
           gitHub_Url: `${data[i].owner.html_url}/${proj_name}`,
           description: data[i].description,
           project_Url: projectUrl,
           project_img: `https://github.com/${owner}/${proj_name}/blob/main/assets/screen.gif?raw=true`,
           lang_url : data[i].languages_url,
-          commitCount:commitCount,
+          // commitCount:commitCount,
           lang:{}
         };
         // log("project_img", projObj);
         projects.push(projObj)
       }
 
+    })
+    .catch(err=>{
+      log('error',err);
     });
 }
 
@@ -87,7 +88,7 @@ setTimeout(function () {
   })
   
 
-}, 200);
+}, 500);
 
 setTimeout(function () {
 projects.forEach(project => {
@@ -106,14 +107,14 @@ projects.forEach(project => {
   if(project.lang.HTML) html=`<div class="progress-bar bg-success text-dark" role="progressbar" style="width:${htmlWidth}%"> HTML: ${project.lang.HTML}%</div>`;
   if(project.lang.JavaScript) js=`<div class="progress-bar bg-warning text-dark" role="progressbar" style="width:${jsWidth}%">Js: ${project.lang.JavaScript}%</div>`;
   if(project.lang.CSS) css=`<div class="progress-bar bg-danger text-dark" role="progressbar" style="width:${cssWidth}%">CSS: ${project.lang.CSS}%</div>`;
+ 
 
-  var mycard = `
+
+  let mycard = `
   <div class="col my-2 gradient-custom d-flex align-items-stretch card-container ">
   <div class="card border-warning m-2">
     <img src="${project.project_img}" class="card-img-top " alt="..."/>
-    // <button type="button" class="btn btn-info">
-    //   Repo. Commits <span class="badge badge-light">${project.commitCount}</span>
-    //   </button>
+
     <div class="  bg-light d-flex justify-content-around">
       <a type="button" href="${project.gitHub_Url}" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
       <a type="button" href="${project.project_Url}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
@@ -146,7 +147,7 @@ var sumLang=cssavg +jsavg+htmlavg;
  cssCount1=`${Math.round(cssavg / sumLang * 100)}`
  jsCount1=`${Math.round(jsavg / sumLang * 100)}`
  htmlCount1=`${Math.round(htmlavg / sumLang * 100)}`
-}, 500); //wait 2 seconds
+}, 700); //wait 2 seconds
 
 setTimeout(function () {
 
@@ -157,8 +158,9 @@ $('#progressCss span').text( `${cssCount1}%`)
 $('#progressJs').attr("style", `width: ${jsCount1}%`)
 $('#progressJs span').text( `${jsCount1}%`)
 
+localStorage.setItem(projects, JSON.stringify(projects));
 
-},700)
+},1000)
 
 // log(cssCount, jsCount, htmlCount)
 
@@ -202,44 +204,5 @@ window.onload = function() {
 }
 
 
-// this function is made by Prathyush kingspp
-// https://gist.github.com/yershalom/a7c08f9441d1aadb13777bce4c7cdc3b
-
-const base_url = 'https://api.github.com';
-
-    function httpGet(theUrl, return_headers) {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", theUrl, false); // false for synchronous request
-        xmlHttp.send(null);
-        if (return_headers) {
-            return xmlHttp
-        }
-        return xmlHttp.responseText;
-    }
-
-    function get_all_commits_count(owner, repo, sha) {
-        let first_commit = get_first_commit(owner, repo);
-        let compare_url = base_url + '/repos/' + owner + '/' + repo + '/compare/' + first_commit + '...' + sha;
-        let commit_req = httpGet(compare_url);
-        let commit_count = JSON.parse(commit_req)['total_commits'] + 1;
-        console.log('Commit Count for: ',repo,"is " , commit_count);
-        return commit_count
-    }
-    
-    function get_first_commit(owner, repo) {
-        let url = base_url + '/repos/' + owner + '/' + repo + '/commits';
-        let req = httpGet(url, true);
-        let first_commit_hash = '';
-        if (req.getResponseHeader('Link')) {
-            let page_url = req.getResponseHeader('Link').split(',')[1].split(';')[0].split('<')[1].split('>')[0];
-            let req_last_commit = httpGet(page_url);
-            let first_commit = JSON.parse(req_last_commit);
-            first_commit_hash = first_commit[first_commit.length - 1]['sha']
-        } else {
-            let first_commit = JSON.parse(req.responseText);
-            first_commit_hash = first_commit[first_commit.length - 1]['sha'];
-        }
-        return first_commit_hash;
-    }
     
     
