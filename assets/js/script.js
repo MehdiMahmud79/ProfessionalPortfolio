@@ -22,8 +22,12 @@ function getApi() {
       return response.json();
     })
     .then(function (data) {
-      // log(data)
+      data.find(obj => obj.name === "SimplePortfolio").id-= 15000000
+
+      log(data)
+      data.sort((a, b) => (a.id > b.id ? -1 : 1));
       for (var i = 0; i < data.length; i++) {
+
         // var proj_name = `${data[i].full_name.split("/")[1]}`;
         var proj_name = data[i].name;
         projectUrl = `https://mehdimahmud79.github.io/${proj_name}/`;
@@ -127,9 +131,6 @@ projects.forEach(project => {
   $(".project-fetched").append(mycard);
 });
 
-log(cssCount)
-log(jsCount)
-log(htmlCount)
 
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
@@ -137,14 +138,12 @@ var cssavg= cssCount.reduce(reducer);
 var jsavg= jsCount.reduce(reducer);
 var htmlavg= htmlCount.reduce(reducer);
 var sumLang=cssavg +jsavg+htmlavg;
-log(sumLang)
  cssCount1=`${Math.round(cssavg / sumLang * 100)}`
  jsCount1=`${Math.round(jsavg / sumLang * 100)}`
  htmlCount1=`${Math.round(htmlavg / sumLang * 100)}`
 }, 500); //wait 2 seconds
 
 setTimeout(function () {
-log('hh',cssCount1,jsCount1,htmlCount1)
 
 $('#progressHTML').attr("style", `width: ${htmlCount1}%`)
 $('#progressHTML span').text( `${htmlCount1}%`)
