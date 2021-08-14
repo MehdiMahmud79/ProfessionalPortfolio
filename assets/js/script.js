@@ -29,8 +29,8 @@ function getApi() {
       for (var i = 0; i < data.length; i++) {
         var repo = data[i].name;
         var sha = 'main';
-       const commitCount=get_all_commits_count(owner, repo, sha)
-        // var proj_name = `${data[i].full_name.split("/")[1]}`;
+       const commitCount=0
+      //  get_all_commits_count(owner, repo, sha)
         var proj_name = data[i].name;
         projectUrl = `https://${owner}.github.io/${proj_name}/`;
 
@@ -156,6 +156,7 @@ $('#progressCss').attr("style", `width: ${cssCount1}%`)
 $('#progressCss span').text( `${cssCount1}%`)
 $('#progressJs').attr("style", `width: ${jsCount1}%`)
 $('#progressJs span').text( `${jsCount1}%`)
+
 
 },700)
 
