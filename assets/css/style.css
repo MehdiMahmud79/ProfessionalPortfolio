@@ -14,7 +14,7 @@
     padding:0;
 
 }
-.project-fetched .card a:hover {
+.project-fetched .card a:hover, .fab:hover {
     transform: scale(1.1);
     transition: all 0.3s easein-out;
 }
@@ -58,9 +58,14 @@
     position: absolute;
     right:20px;
 } 
+.navbar-brand:hover {
+    transform: scale(1.05);
+    transition: all 0.5s easein-out;
+}
 @media only screen and (max-width: 768px){
 #navbarNav{
     position: relative;
     left:20px;
 }    
 
+}
