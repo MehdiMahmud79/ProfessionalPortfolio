@@ -90,6 +90,7 @@ setTimeout(function () {
 
 }, 500);
 
+//  creat project cards after 1 second
 setTimeout(function () {
 projects.forEach(project => {
 
@@ -147,7 +148,9 @@ var sumLang=cssavg +jsavg+htmlavg;
  cssCount1=`${Math.round(cssavg / sumLang * 100)}`
  jsCount1=`${Math.round(jsavg / sumLang * 100)}`
  htmlCount1=`${Math.round(htmlavg / sumLang * 100)}`
-}, 700); //wait 2 seconds
+}, 1000); //wait 2 seconds
+
+//  creat Skills progressbar cards after 1.5 second
 
 setTimeout(function () {
 
@@ -160,7 +163,7 @@ $('#progressJs span').text( `${jsCount1}%`)
 
 localStorage.setItem(projects, JSON.stringify(projects));
 
-},1000)
+},1500)
 
 // log(cssCount, jsCount, htmlCount)
 
@@ -196,12 +199,7 @@ localStorage.setItem(projects, JSON.stringify(projects));
     loop: true,
   });
 });
-window.onload = function() {
-	if(!window.location.hash) {
-		window.location = window.location + '#loaded';
-		window.location.reload();
-	}
-}
+
 
 
     
