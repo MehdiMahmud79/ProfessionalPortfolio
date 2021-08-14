@@ -8,6 +8,18 @@ var jsCount1="";
 var htmlCount1="";
 var owner = 'MehdiMahmud79';
 
+class project {
+  constructor(projectName, gitHub_Url, project_Url, description,project_img,lang_url,commitCount,lang) {
+    this.projectName = projectName;
+    this.gitHub_Url = gitHub_Url;
+    this.project_Url = project_Url;
+    this.description = description;
+    this.project_img = project_img;
+    this.lang_url = lang_url;
+    this.commitCount = commitCount;
+    this.lang = lang;
+  }
+}
 $(document).ready(function () {
 getApi();
 
@@ -25,26 +37,19 @@ function getApi() {
       data.find(obj => obj.name === "SimplePortfolio").id-= 15000000
       // sort the reposotories according to created date
       data.sort((a, b) => (a.id > b.id ? -1 : 1));
-      for (var i = 0; i < data.length; i++) {
-        var repo = data[i].name;
-        var sha = 'main';
-       
-        var proj_name = data[i].name;
-        projectUrl = `https://${owner}.github.io/${proj_name}/`;
+      data.forEach(proj=>{
+        let projectName = proj.name;
+        let project_Url = `https://${owner}.github.io/${projectName}/`;
+        let  gitHub_Url= `${proj.owner.html_url}/${projectName}`;
+        let  description= proj.description;
+        let project_img=`https://github.com/${owner}/${projectName}/blob/main/assets/screen.gif?raw=true`;
+        let lang_url = proj.languages_url;
+        let lang={};
+        let commitCount=0;// this can be generetaed from get_all_commits_count(owner, repo, sha) in the commit.js
 
-        let projObj= {
-          projectName: proj_name,
-          gitHub_Url: `${data[i].owner.html_url}/${proj_name}`,
-          description: data[i].description,
-          project_Url: projectUrl,
-          project_img: `https://github.com/${owner}/${proj_name}/blob/main/assets/screen.gif?raw=true`,
-          lang_url : data[i].languages_url,
-          // commitCount:commitCount,
-          lang:{}
-        };
-        // log("project_img", projObj);
-        projects.push(projObj)
-      }
+        let projectObj= new project (projectName, gitHub_Url, project_Url, description, project_img, lang_url, commitCount, lang);
+        projects.push(projectObj);
+      })
 
     })
     .catch(err=>{
