@@ -15,8 +15,7 @@ getApi();
 
 function getApi() {
   // replace `octocat` with anyone else's GitHub username
-  username = "mehdimahmud79";
-  var requestUrl = `https://api.github.com/users/${username}/repos`;
+  var requestUrl = `https://api.github.com/users/${owner}/repos`;
 
   fetch(requestUrl)
     .then(function (response) {
@@ -30,17 +29,17 @@ function getApi() {
       for (var i = 0; i < data.length; i++) {
         var repo = data[i].name;
         var sha = 'main';
-       get_all_commits_count('MehdiMahmud79', repo, sha)
+       get_all_commits_count(owner, repo, sha)
         // var proj_name = `${data[i].full_name.split("/")[1]}`;
         var proj_name = data[i].name;
-        projectUrl = `https://mehdimahmud79.github.io/${proj_name}/`;
+        projectUrl = `https://${owner}.github.io/${proj_name}/`;
 
          projObj= {
           projectName: proj_name,
           gitHub_Url: `${data[i].owner.html_url}/${proj_name}`,
           description: data[i].description,
           project_Url: projectUrl,
-          project_img: `https://github.com/MehdiMahmud79/${proj_name}/blob/main/assets/screen.gif?raw=true`,
+          project_img: `https://github.com/${owner}/${proj_name}/blob/main/assets/screen.gif?raw=true`,
           lang_url : data[i].languages_url,
           lang:{}
         };
