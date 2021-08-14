@@ -111,9 +111,9 @@ projects.forEach(project => {
   <div class="col my-2 gradient-custom d-flex align-items-stretch card-container ">
   <div class="card border-warning m-2">
     <img src="${project.project_img}" class="card-img-top " alt="..."/>
-    <button type="button" class="btn btn-info">
-      Repo. Commits <span class="badge badge-light">${project.commitCount}</span>
-      </button>
+    // <button type="button" class="btn btn-info">
+    //   Repo. Commits <span class="badge badge-light">${project.commitCount}</span>
+    //   </button>
     <div class="  bg-light d-flex justify-content-around">
       <a type="button" href="${project.gitHub_Url}" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
       <a type="button" href="${project.project_Url}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
