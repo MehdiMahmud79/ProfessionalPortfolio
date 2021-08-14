@@ -36,6 +36,31 @@
   }
 
 
-  #more {display: none;}
+.btn{
+    background:rgb(65, 65, 65);
+    padding:5px 20px;
+}
+.btn:hover{
+    background:rgb(12, 12, 12);
+    color:chartreuse;
+} 
 
-  
+#navbarNav .nav-link.active{
+    color:chartreuse;
+}
+#navbarNav .nav-link.active:hover{
+    color:rgb(255, 0, 0);
+}
+#navbarNav .nav-link:hover{
+    color:rgb(0, 255, 13);
+}
+#navbarNav{
+    position: absolute;
+    right:40px;
+} 
+@media only screen and (max-width: 768px){
+#navbarNav{
+    position: relative;
+    left:20px;
+}    
+}
