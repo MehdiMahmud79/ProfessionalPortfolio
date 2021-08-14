@@ -29,7 +29,7 @@ function getApi() {
       for (var i = 0; i < data.length; i++) {
         var repo = data[i].name;
         var sha = 'main';
-       get_all_commits_count(owner, repo, sha)
+       const commitCount=get_all_commits_count(owner, repo, sha)
         // var proj_name = `${data[i].full_name.split("/")[1]}`;
         var proj_name = data[i].name;
         projectUrl = `https://${owner}.github.io/${proj_name}/`;
@@ -41,6 +41,7 @@ function getApi() {
           project_Url: projectUrl,
           project_img: `https://github.com/${owner}/${proj_name}/blob/main/assets/screen.gif?raw=true`,
           lang_url : data[i].languages_url,
+          commitCount:commitCount,
           lang:{}
         };
         // log("project_img", projObj);
@@ -110,6 +111,9 @@ projects.forEach(project => {
   <div class="col my-2 gradient-custom d-flex align-items-stretch card-container ">
   <div class="card border-warning m-2">
     <img src="${project.project_img}" class="card-img-top " alt="..."/>
+    <button type="button" class="btn btn-info">
+      Repo. Commits <span class="badge badge-light">${project.commitCount}</span>
+      </button>
     <div class="  bg-light d-flex justify-content-around">
       <a type="button" href="${project.gitHub_Url}" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
       <a type="button" href="${project.project_Url}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
@@ -125,7 +129,6 @@ projects.forEach(project => {
     ${css}
     </div>
   </div>
-
   
 </div>
 
