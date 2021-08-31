@@ -98,10 +98,10 @@ function getLanguage(){
         project.lang=  lanObj;
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
   
-       if(cssCount) cssavg= cssCount.reduce(reducer);
-       if(jsavg) jsavg= jsCount.reduce(reducer);
-      if(htmlavg)  htmlavg= htmlCount.reduce(reducer);
-      if(sumLang)  sumLang=cssavg +jsavg+htmlavg;
+       if(cssCount.length>0) cssavg= cssCount.reduce(reducer);
+       if(jsCount.length>0) jsavg= jsCount.reduce(reducer);
+      if(htmlCount.length>0)  htmlavg= htmlCount.reduce(reducer);
+      sumLang=cssavg +jsavg+htmlavg;
       }).catch(e => console.log(e));
   
     })
