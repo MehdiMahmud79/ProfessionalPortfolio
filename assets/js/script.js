@@ -1,4 +1,4 @@
-var projects = SavedProjects;
+var projects = [];
 const log=console.log;
 var cssCount=[];
 var jsCount=[];
@@ -39,9 +39,9 @@ function getApi() {
       // cleaar saved projects to update it with the Githun Api
       projects=[];
       // this is just to update the id for recreated reposotory 
-      data.find(obj => obj.name === "SimplePortfolio").id-= 15000000
+      // data.find(obj => obj.name === "SimplePortfolio").id-= 15000000
       // sort the reposotories according to created date
-      data.sort((a, b) => (a.id > b.id ? -1 : 1));
+      // data.sort((a, b) => (a.id > b.id ? -1 : 1));
       data.forEach(proj=>{
         let projectName = proj.name;
         let project_Url = `https://${owner}.github.io/${projectName}/`;
@@ -200,6 +200,8 @@ function creatCards() {
       "HTML",
       "JavaScript",
       "JQuery",
+      "SQL", 
+      "Sequelize ", 
       "NodeJs",
       "Express", 
       "Git",           
