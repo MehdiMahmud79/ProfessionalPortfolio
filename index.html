@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
   <title>Portfolio(MM)</title>
 </head>
 <link rel="shortcut icon" href="favicon/favicon.ico">
@@ -113,26 +112,34 @@
     Skills
   </h1>
   <div class="container m-2 mx-auto">
-    <i class="fab fa-html5 fs-1"></i>
+    
+    <h5 class="mt-4"><i class="fab fa-html5 fs-1"></i>: HTML</h5>
     <div class="progress m-2" style="height: 25px">
-      <div id="progressHTML" class="progress-bar progress-bar-striped bg-success" role="progressbar"
+      <div id="progressHTML" class="progress-bar progress-bar-striped bg-green-200" role="progressbar"
         style="width: 100%">
-        <span class="badge badge-secondary fs-6 text-dark">HTML: 100%</span>
-      </div>
-    </div>
-    <i class="fab fa-node-js fs-1"></i>
-    <div class="progress m-2" style="height: 25px">
-      <div id="progressJs" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 100%">
-        <span class="badge badge-secondary fs-6 text-dark">JavaScript: 100%</span>
-      </div>
-    </div>
-    <i class="fab fa-css3-alt fs-1"></i>
-    <div class="progress m-2" style="height: 25px">
-      <div id="progressCss" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%">
-        <span class="badge badge-secondary fs-6 text-dark">CSS: 100% </span>
+        <span class="badge badge-secondary fs-6 text-green-900">HTML: 100%</span>
       </div>
     </div>
 
+    <h5 class="mt-4"><i class="fab fa-node-js fs-1"></i>: Javascript</h5>
+    <div class="progress m-2" style="height: 25px">
+      <div id="progressJs" class="progress-bar progress-bar-striped bg-yellow-200" role="progressbar" style="width: 100%">
+        <span class="badge badge-secondary fs-6 text-yellow-900">JavaScript: 100%</span>
+      </div>
+    </div>
+    <h5 class="mt-4"><i class="fab fa-css3-alt fs-1"></i>: CSS</h5>
+    <div class="progress m-2" style="height: 25px">
+      <div id="progressCss" class="progress-bar progress-bar-striped bg-red-200" role="progressbar" style="width: 100%">
+        <span class="badge badge-secondary fs-6 text-red-900">CSS: 100% </span>
+      </div>
+    </div>
+
+    <h5 class="mt-4"><img src="./assets/images/hbs.png" alt="hbs icon", style="width:45px">: Handlebars</h5>
+    <div class="progress m-2" style="height: 25px">
+      <div id="progressHbs" class="progress-bar progress-bar-striped bg-purple-200" role="progressbar" style="width: 100%">
+        <span class="badge badge-secondary fs-6 text-purple-900">Hbs: 100% </span>
+      </div>
+    </div>
     <h1 class="fs-5 bg-light m-0 my-4 text-success text-center">
       <i class="fas fa-laptop-code p-2"></i>
       Other Skills:
@@ -207,12 +214,10 @@
       </div>
     </section>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+ 
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
