@@ -20,11 +20,13 @@ body{
 .projectAll .card a:hover, .fab:hover {
   transform: scale(1.1);
   transition: all 0.3s easein-out;
+  cursor: pointer;
 }
 .projectAll:hover {
   opacity:0.7;
   transform: scale(1.01);
   transition: all 0.5s easein-out;
+  cursor:grab;
 }
 
 .recent_image{

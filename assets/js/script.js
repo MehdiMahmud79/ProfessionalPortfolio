@@ -167,7 +167,7 @@ function creatCarousel(favProject) {
           <div class="text-center my-1"> <h5 class="display-5  text-red-900 ">${project.projectName.toUpperCase()}</h5></div>
           
           <div class="d-flex flex-column flex-md-row align-items-center mx-5">
-               <div class="mx-2 text-center w-100" >
+               <div class="mx-2 text-center w-100 projectAll" >
                   <img style="width:75%":" src="${
                     project.project_img
                   }" alt="project image">
