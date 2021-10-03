@@ -17,16 +17,19 @@ body{
   padding:0;
 
 }
-.project-fetched .card a:hover, .fab:hover {
+.projectAll .card a:hover, .fab:hover {
   transform: scale(1.1);
   transition: all 0.3s easein-out;
 }
-.project-fetched  .card:hover {
-  opacity:0.9;
+.projectAll:hover {
+  opacity:0.7;
   transform: scale(1.01);
   transition: all 0.5s easein-out;
 }
 
+.recent_image{
+  max-width:60%;
+}
 .gradient-custom:hover {
   /* fallback for old browsers */
   background: #959595;

@@ -86,7 +86,7 @@ function generateProgressBars(totalSum) {
   $("#progressCss span").text(`${totalSum.CSS[1]}%`);
 
   $("#progressJs").attr("style", `width: ${totalSum.JavaScript[1]}%`);
-  $("#progressJs span").text(`${totalSum.JavaScript[1]}%`);
+  $("#progressJs span").text(`${totalSum.JavaScript[1] + 1}%`);
 
   $("#progressHbs").attr("style", `width: ${totalSum.Handlebars[1]}%`);
   $("#progressHbs span").text(`${totalSum.Handlebars[1]}%`);
@@ -112,13 +112,13 @@ function creatCards(oldProjects) {
       hbs = `<div class="progress-bar bg-purple-200 text-purple-900" role="progressbar" style="width:${project.languages.Handlebars[1]}%">${project.languages.Handlebars[1]}%</div>`;
 
     let mycard = `
-    <div class="col-3 m-3  d-flex   align-items-stretch img-thumbnail shadow-lg bg-gray-100">
+    <div class="projectAll m-3  d-flex   align-items-stretch img-thumbnail shadow-lg bg-gray-100">
     <div class="  m-1">
       <img src="${project.project_img}" class="card-img-top " alt="project image "/>
 
       <div class="  bg-light d-flex justify-content-around">
         <a type="button" href="${project.gitHub_Url}" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
-        <a type="button" href="${project.project_Url}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
+        <a type="button" href="${project.homepage}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
       </div>
 
       <div class="card-body">
@@ -139,7 +139,7 @@ function creatCards(oldProjects) {
 
   `;
 
-    $(".project-fetched").append(mycard);
+    $(".project-All").append(mycard);
   });
 }
 
@@ -154,59 +154,43 @@ var typed = new Typed(".skillTitle span", {
 
 function creatCarousel(favProject) {
   favProject.forEach((project, index) => {
-    if (index == 0) {
-      $(".carousel-indicators").append(
-        `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`
-      );
+    var activeclass = "";
+    if (index == 0) activeclass = "active";
+    $(".carousel-indicators").append(
+      `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${index}" class="${activeclass}" aria-current="true" aria-label="Slide ${
+        index + 1
+      }"></button>`
+    );
 
-      mycard = `
-
-       <div class="carousel-item active">
-       <div class="text-center my-1"> <h5 class="display-5  text-red-900 ">${project.projectName.toUpperCase()}</h5></div>
-
-      <div class="d-flex align-items-center mx-5">
-         <div class="mx-4">
-             <img src="${
-               project.project_img
-             }" style="width:400px" alt="project image">
-        </div
-        <div class="">
-           
-            <h3 class="text-gray-500 ">${project.description}</h3>
+    mycard = `
+       <div class="carousel-item ${activeclass}">
+          <div class="text-center my-1"> <h5 class="display-5  text-red-900 ">${project.projectName.toUpperCase()}</h5></div>
+          
+          <div class="d-flex flex-column flex-md-row align-items-center mx-5">
+               <div class="mx-4 w-100" >
+                  <img style="width:75%":" src="${
+                    project.project_img
+                  }" alt="project image">
+                  <div class=" w-75 bg-light d-flex justify-content-around">
+                  <a type="button" href="${
+                    project.gitHub_Url
+                  }" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
+                  <a type="button" href="${
+                    project.homepage
+                  }" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
+                </div>
+               </div>
+              <div class="">
+            <h6 class="text-gray-500 py-2 ">${project.description}</h6>
+            
+          </div>
+          
         </div>
+        
       </div>
-    </div>
   `;
 
-      $(".carousel-inner").append(mycard);
-    } else if (index < 3) {
-      $(".carousel-indicators").append(
-        `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${index}$" aria-current="true" aria-label="Slide  ${
-          index + 1
-        }"></button>`
-      );
-
-      mycard = `
-
-       <div class="carousel-item ">
-       <div class="text-center  my-1"> <h5 class="display-5 text-red-900 ">${project.projectName.toUpperCase()}</h5></div>
-
-      <div class="d-flex align-items-center mx-5">
-         <div class="mx-4">
-             <img src="${
-               project.project_img
-             }" style="width:400px" alt="project image">
-        </div
-        <div class="">
-           
-            <h3 class="text-gray-500 ">${project.description}</h3>
-        </div>
-      </div>
-    </div>
-  `;
-
-      $(".carousel-inner").append(mycard);
-    }
+    $(".carousel-inner").append(mycard);
   });
 }
 var typed = new Typed(".Myskills", {
