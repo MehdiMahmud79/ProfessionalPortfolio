@@ -171,7 +171,7 @@ function creatCarousel(favProject) {
                   <img style="width:75%":" src="${
                     project.project_img
                   }" alt="project image">
-                  <div class=" w-75 bg-light d-flex justify-content-around">
+                  <div class=" w-100  d-flex justify-content-around ">
                   <a type="button" href="${
                     project.gitHub_Url
                   }" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
