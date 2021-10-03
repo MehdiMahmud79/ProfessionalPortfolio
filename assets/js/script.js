@@ -71,6 +71,7 @@ const portfolioMaker = async (projectsUrl) => {
   log(totalSum);
 
   generateProgressBars(totalSum);
+  creatCarousel();
   creatCards();
 };
 
@@ -149,6 +150,57 @@ var typed = new Typed(".skillTitle span", {
   loop: true,
 });
 
+function creatCarousel() {
+  projects.forEach((project, index) => {
+    if (index == 0) {
+      $(".carousel-indicators").append(
+        `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`
+      );
+
+      mycard = `
+
+       <div class="carousel-item active">
+       <div class="text-center bg-red-400 my-1"> <h5 class=" text-red-900 ">${project.projectName}</h5></div>
+
+      <div class="d-flex align-items-center mx-3">
+         <div class="mx-4">
+             <img src="${project.project_img}" style="width:400px" alt="project image">
+        </div
+        <div class="">
+           
+            <h3 class="text-gray-500 ">${project.description}</h3>
+        </div>
+      </div>
+    </div>
+  `;
+
+      $(".carousel-inner").append(mycard);
+    } else if (index < 4) {
+      $(".carousel-indicators").append(
+        `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${index}$" class="active" aria-current="true" aria-label="Slide ${index}"></button>`
+      );
+
+      mycard = `
+
+       <div class="carousel-item ">
+       <div class="text-center bg-red-400 my-1"> <h5 class=" text-red-900 ">${project.projectName}</h5></div>
+
+      <div class="d-flex align-items-center mx-3">
+         <div class="mx-4">
+             <img src="${project.project_img}" style="width:400px" alt="project image">
+        </div
+        <div class="">
+           
+            <h3 class="text-gray-500 ">${project.description}</h3>
+        </div>
+      </div>
+    </div>
+  `;
+
+      $(".carousel-inner").append(mycard);
+    }
+  });
+}
 var typed = new Typed(".Myskills", {
   strings: [
     "HTML",
