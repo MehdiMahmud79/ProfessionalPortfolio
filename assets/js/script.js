@@ -167,7 +167,7 @@ function creatCarousel(favProject) {
           <div class="text-center my-1"> <h5 class="display-5  text-red-900 ">${project.projectName.toUpperCase()}</h5></div>
           
           <div class="d-flex flex-column flex-md-row align-items-center mx-5">
-               <div class="mx-4 w-100" >
+               <div class="mx-2 text-center w-100" >
                   <img style="width:75%":" src="${
                     project.project_img
                   }" alt="project image">
@@ -180,8 +180,8 @@ function creatCarousel(favProject) {
                   }" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
                 </div>
                </div>
-              <div class="">
-            <h6 class="text-gray-500 py-2 ">${project.description}</h6>
+              <div class="px-2 mx-0">
+            <h6 class="text-gray-500 py-2">${project.description}</h6>
             
           </div>
           
