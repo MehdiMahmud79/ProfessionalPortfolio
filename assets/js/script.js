@@ -93,19 +93,20 @@ function generateProgressBars(totalSum) {
 // Creat cards and append it to the index page
 function creatCards() {
   $(".project-fetched").empty();
-  var css = "";
-  var js = "";
-  var html = "";
-  var hbs = "";
+
   projects.forEach((project, index) => {
+    var css = "";
+    var js = "";
+    var html = "";
+    var hbs = "";
     if (project.languages.HTML)
-      html = `<div class="progress-bar bg-success text-dark" role="progressbar" style="width:${project.languages.HTML[1]}%"> HTML: ${project.languages.HTML[1]}%</div>`;
+      html = `<div class="progress-bar bg-green-200 text-green-900" role="progressbar" style="width:${project.languages.HTML[1]}%"> HTML: ${project.languages.HTML[1]}%</div>`;
     if (project.languages.CSS)
-      js = `<div class="progress-bar bg-warning text-dark" role="progressbar" style="width:${project.languages.CSS[1]}%">Js: ${project.languages.CSS[1]}%</div>`;
+      css = `<div class="progress-bar bg-red-200 text-red-900" role="progressbar" style="width:${project.languages.CSS[1]}%">CSS: ${project.languages.CSS[1]}%</div>`;
     if (project.languages.JavaScript)
-      css = `<div class="progress-bar bg-danger text-dark" role="progressbar" style="width:${project.languages.JavaScript[1]}%">CSS: ${project.languages.JavaScript[1]}%</div>`;
+      js = `<div class="progress-bar bg-yellow-200 text-yellow-900" role="progressbar" style="width:${project.languages.JavaScript[1]}%">Js: ${project.languages.JavaScript[1]}%</div>`;
     if (project.languages.Handlebars)
-      hbs = `<div class="progress-bar bg-purple-400 text-dark" role="progressbar" style="width:${project.languages.Handlebars[1]}%">Hbs: ${project.languages.Handlebars[1]}%</div>`;
+      hbs = `<div class="progress-bar bg-purple-200 text-purple-900" role="progressbar" style="width:${project.languages.Handlebars[1]}%">Hbs: ${project.languages.Handlebars[1]}%</div>`;
 
     let mycard = `
     <div class="col my-2 gradient-custom d-flex align-items-stretch card-container ">
