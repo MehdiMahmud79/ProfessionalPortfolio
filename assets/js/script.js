@@ -86,7 +86,7 @@ function generateProgressBars(totalSum) {
   $("#progressCss span").text(`${totalSum.CSS[1]}%`);
 
   $("#progressJs").attr("style", `width: ${totalSum.JavaScript[1]}%`);
-  $("#progressJs span").text(`${totalSum.JavaScript[1] + 1}%`);
+  $("#progressJs span").text(`${totalSum.JavaScript[1]}%`);
 
   $("#progressHbs").attr("style", `width: ${totalSum.Handlebars[1]}%`);
   $("#progressHbs span").text(`${totalSum.Handlebars[1]}%`);
