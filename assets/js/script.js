@@ -68,11 +68,13 @@ const portfolioMaker = async (projectsUrl) => {
     totalSum[i] = [totalSum[i], Math.round((totalSum[i] / allLanguages) * 100)];
   }
 
-  log(totalSum);
+  // log(totalSum);
 
   generateProgressBars(totalSum);
-  creatCarousel();
-  creatCards();
+  let favProject = projects.slice(0, 4);
+  let oldProjects = projects.slice(4);
+  creatCarousel(favProject);
+  creatCards(oldProjects);
 };
 
 function generateProgressBars(totalSum) {
@@ -92,10 +94,10 @@ function generateProgressBars(totalSum) {
   localStorage.setItem(projects, JSON.stringify(projects));
 }
 // Creat cards and append it to the index page
-function creatCards() {
+function creatCards(oldProjects) {
   $(".project-fetched").empty();
 
-  projects.forEach((project, index) => {
+  oldProjects.forEach((project, index) => {
     var css = "";
     var js = "";
     var html = "";
@@ -150,8 +152,8 @@ var typed = new Typed(".skillTitle span", {
   loop: true,
 });
 
-function creatCarousel() {
-  projects.forEach((project, index) => {
+function creatCarousel(favProject) {
+  favProject.forEach((project, index) => {
     if (index == 0) {
       $(".carousel-indicators").append(
         `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>`
@@ -160,11 +162,13 @@ function creatCarousel() {
       mycard = `
 
        <div class="carousel-item active">
-       <div class="text-center bg-red-400 my-1"> <h5 class=" text-red-900 ">${project.projectName}</h5></div>
+       <div class="text-center my-1"> <h5 class="display-5  text-red-900 ">${project.projectName.toUpperCase()}</h5></div>
 
-      <div class="d-flex align-items-center mx-3">
+      <div class="d-flex align-items-center mx-5">
          <div class="mx-4">
-             <img src="${project.project_img}" style="width:400px" alt="project image">
+             <img src="${
+               project.project_img
+             }" style="width:400px" alt="project image">
         </div
         <div class="">
            
@@ -175,19 +179,23 @@ function creatCarousel() {
   `;
 
       $(".carousel-inner").append(mycard);
-    } else if (index < 4) {
+    } else if (index < 3) {
       $(".carousel-indicators").append(
-        `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${index}$" class="active" aria-current="true" aria-label="Slide ${index}"></button>`
+        `<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${index}$" aria-current="true" aria-label="Slide  ${
+          index + 1
+        }"></button>`
       );
 
       mycard = `
 
        <div class="carousel-item ">
-       <div class="text-center bg-red-400 my-1"> <h5 class=" text-red-900 ">${project.projectName}</h5></div>
+       <div class="text-center  my-1"> <h5 class="display-5 text-red-900 ">${project.projectName.toUpperCase()}</h5></div>
 
-      <div class="d-flex align-items-center mx-3">
+      <div class="d-flex align-items-center mx-5">
          <div class="mx-4">
-             <img src="${project.project_img}" style="width:400px" alt="project image">
+             <img src="${
+               project.project_img
+             }" style="width:400px" alt="project image">
         </div
         <div class="">
            
