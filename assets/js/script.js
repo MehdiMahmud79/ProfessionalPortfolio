@@ -143,7 +143,6 @@ function creatCards(oldProjects) {
   });
 }
 
-portfolioMaker(projectsUrl);
 
 var typed = new Typed(".skillTitle span", {
   strings: ["Web Developer...✔️", "Problem Solver...✔️", "Programmer...✔️"],
@@ -217,3 +216,5 @@ var typed = new Typed(".Myskills", {
   backSpeed: 50,
   loop: true,
 });
+
+portfolioMaker(projectsUrl);

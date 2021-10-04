@@ -1,250 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- CSS only -->
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <title>Portfolio(MM)</title>
-</head>
-<link rel="shortcut icon" href="favicon/favicon.ico">
-<link rel="icon" type="image/gif" href="assets/images/animated_favicon1.gif">
-<body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-    <div class="container-fluid">
-      <a class="
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Portfolio(MM)</title>
+  </head>
+  <link rel="shortcut icon" href="favicon/favicon.ico" />
+  <link
+    rel="icon"
+    type="image/gif"
+    href="assets/images/animated_favicon1.gif"
+  />
+  <body class="container-fluid">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+        <a
+          class="
             navbar-brand
             fs-2
             text-warning
             border-info border-bottom border-4
             py-0
-          " href="#">P<span class="text-danger">o</span>r<span class="text-primary">t</span>f<span
-          class="text-success">o</span>l<span class="text-info">i</span><span class="text-warning">o</span>
+          "
+          href="#"
+          >P<span class="text-danger">o</span>r<span class="text-primary"
+            >t</span
+          >f<span class="text-success">o</span>l<span class="text-info">i</span
+          ><span class="text-warning">o</span>
         </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#skills">Skills</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#projects">Projects</a>
-              </li>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="#contactMe">Contact Me</a>
-              </li>
-            </ul>
-
-          </div>
-
-    </div>
-
-  </nav>
-
-  <!-- this section is about me -->
-  <h1 class="display-7 bg-warning m-0 mt-2 text-primary text-center">
-    <i class="fas fa-user-graduate"></i>
-
-    About me
-  </h1>
-  <h2 class="fs-6 bg-warning text-center text-secondary pt-2">
-    <i class="fas fa-angle-double-left"></i> who I'm
-    <i class="fas fa-angle-double-right"></i>
-  </h2>
-
-  <section class="container-fluid bg-dark p-2 shadow-sm" id="about">
-    <div class="row mt-0 bg-light">
-      <div class="col-md-4">
-        <img class="img-fluid w-75 p-4 rounded-pill cover" src="./assets/images/profile.jpg" alt="my photo" />
+            <li class="nav-item">
+              <a class="nav-link" href="#contactMe">Contact Me</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-md-8 mt-3">
-        <h3 class="rounded text-primary fs-2">I'm Mehdi</h3>
+    </nav>
 
-        <h4 class="skillTitle">
-          and I'm a <span class="text-danger fs-2"></span>
-        </h4>
+    <!-- this section is about me -->
+    <h1 class="display-7 bg-warning m-0 mt-2 text-primary text-center">
+      <i class="fas fa-user-graduate"></i>
 
-        <p class="fs-5">
-          <span class="text-muted fs-4">PhD finally over!</span> Now I can
-          fully concentrate on <i>Coding Boot Camp</i> for 6 months and become
-          a Full Stack Web Developer!
-        </p>
-        <p class="fs-7 text-muted">
-          Experience in software, IT and research. I completed a PhD in
-          <strong>Applied Mathematics</strong> at the University of
-          Birmingham. I worked as a researcher at the same university and now
-          participating in a 6 month coding bootcamp to become a web
-          developer.
-        </p>
-        <a type="button" class="btn btn-dark my-2 shadow" href="./assets/CV_mehdi.pdf" target="_blank">
-          Download CV</a>
-      </div>
-      <div class="fs-5 text-center">
-        <a href="https://www.researchgate.net/profile/Mehdi-Mahmud" class="me-4 fs-2 text-reset text-decoration-none">
-          <i class="fab fa-researchgate"></i>
-        </a>
-
-        <a href="https://www.linkedin.com/in/mehdi-mahmud/" class="me-4  fs-2 text-reset text-decoration-none">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/mehdimahmud79" class="me-4  fs-2 text-reset text-decoration-none">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills section -->
-  <h1 class="display-7 bg-dark m-0 my-4 text-primary text-center" id="skills">
-    <i class="fas fa-laptop-code p-2"></i>
-    Skills
-  </h1>
-  <div class="container m-2 mx-auto">
-    
-    <h5 class="mt-4"><i class="fab fa-html5 fs-1"></i>: HTML</h5>
-    <div class="progress m-2" style="height: 25px">
-      <div id="progressHTML" class="progress-bar progress-bar-striped bg-green-200" role="progressbar"
-        style="width: 100%">
-        <span class="badge badge-secondary fs-6 text-green-900">HTML: 100%</span>
-      </div>
-    </div>
-
-    <h5 class="mt-4"><i class="fab fa-node-js fs-1"></i>: Javascript</h5>
-    <div class="progress m-2" style="height: 25px">
-      <div id="progressJs" class="progress-bar progress-bar-striped bg-yellow-200" role="progressbar" style="width: 100%">
-        <span class="badge badge-secondary fs-6 text-yellow-900">JavaScript: 100%</span>
-      </div>
-    </div>
-    <h5 class="mt-4"><i class="fab fa-css3-alt fs-1"></i>: CSS</h5>
-    <div class="progress m-2" style="height: 25px">
-      <div id="progressCss" class="progress-bar progress-bar-striped bg-red-200" role="progressbar" style="width: 100%">
-        <span class="badge badge-secondary fs-6 text-red-900">CSS: 100% </span>
-      </div>
-    </div>
-
-    <h5 class="mt-4"><img src="./assets/images/hbs.png" alt="hbs icon", style="width:45px">: Handlebars</h5>
-    <div class="progress m-2" style="height: 25px">
-      <div id="progressHbs" class="progress-bar progress-bar-striped bg-purple-200" role="progressbar" style="width: 100%">
-        <span class="badge badge-secondary fs-6 text-purple-900">Hbs: 100% </span>
-      </div>
-    </div>
-    <h1 class="fs-5 bg-light m-0 my-4 text-success text-center">
-      <i class="fas fa-laptop-code p-2"></i>
-      Other Skills:
-
-      <span class="Myskills text-center fs-5 text-muted" style="height: 20px"></span>
+      About me
     </h1>
-  </div>
+    <h2 class="fs-6 bg-warning text-center text-secondary pt-2">
+      <i class="fas fa-angle-double-left"></i> who I'm
+      <i class="fas fa-angle-double-right"></i>
+    </h2>
 
+    <section class="container-fluid bg-dark p-2 shadow-sm" id="about">
+      <div class="row mt-0 bg-light">
+        <div class="col-md-4">
+          <img
+            class="img-fluid w-75 p-4 rounded-pill cover"
+            src="./assets/images/profile.jpg"
+            alt="my photo"
+          />
+        </div>
+        <div class="col-md-8 mt-3">
+          <h3 class="rounded text-primary fs-2">I'm Mehdi</h3>
 
+          <h4 class="skillTitle">
+            and I'm a <span class="text-danger fs-2"></span>
+          </h4>
 
-  <!-- Projects section -->
-  <h1 class="display-7 bg-dark m-0 my-4 text-primary text-center" id="projects">
-    <i class="fas fa-chalkboard-teacher p-2"></i>
-    Projects
-  </h1>
-      <!-- recent projects -->
-      <div class="container-fluid bg-gray-500 d-flex justify-content-center">
-        <div id="carouselExampleCaptions" class="carousel slide  " data-bs-ride="carousel">
-          <div class="carousel-indicators">
+          <p class="fs-5">
+            <span class="text-muted fs-4">PhD finally over!</span> Now I can
+            fully concentrate on <i>Coding Boot Camp</i> for 6 months and become
+            a Full Stack Web Developer!
+          </p>
+          <p class="fs-7 text-muted">
+            Experience in software, IT and research. I completed a PhD in
+            <strong>Applied Mathematics</strong> at the University of
+            Birmingham. I worked as a researcher at the same university and now
+            participating in a 6 month coding bootcamp to become a web
+            developer.
+          </p>
+          <div class="text-center">
+          <a type="button" target="_blank" class="btn bg-red-800 text-red-100 position-relative " href="./assets/CV_mehdi.pdf">
+            <i class="fa fa-download  text-gray-400" aria-hidden="true"></i> Higher Me
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-red-400">
+              CV
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </a>
+   </div>
+        </div>
+        <div class="fs-5 text-center">
+          <a
+            href="https://www.researchgate.net/profile/Mehdi-Mahmud"
+            class="me-4 fs-2 text-reset text-decoration-none"
+          >
+            <i class="fab fa-researchgate"></i>
+          </a>
 
-          </div>
-          <div class="carousel-inner img-thumbnail m-2 bg-blue-200 p-5 ">
-<!-- cards here -->
-     
+          <a
+            href="https://www.linkedin.com/in/mehdi-mahmud/"
+            class="me-4 fs-2 text-reset text-decoration-none"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/mehdimahmud79"
+            class="me-4 fs-2 text-reset text-decoration-none"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills section -->
+    <h1 class="display-7 bg-dark m-0 my-4 text-primary text-center" id="skills">
+      <i class="fas fa-laptop-code p-2"></i>
+      Skills
+    </h1>
+    <div class="container m-2 mx-auto">
+      <h5 class="mt-4"><i class="fab fa-html5 fs-1"></i>: HTML</h5>
+      <div class="progress m-2" style="height: 25px">
+        <div
+          id="progressHTML"
+          class="progress-bar progress-bar-striped bg-green-200"
+          role="progressbar"
+          style="width: 100%"
+        >
+          <span class="badge badge-secondary fs-6 text-green-900"
+            >HTML: 100%</span
+          >
+        </div>
+      </div>
+
+      <h5 class="mt-4"><i class="fab fa-node-js fs-1"></i>: Javascript</h5>
+      <div class="progress m-2" style="height: 25px">
+        <div
+          id="progressJs"
+          class="progress-bar progress-bar-striped bg-yellow-200"
+          role="progressbar"
+          style="width: 100%"
+        >
+          <span class="badge badge-secondary fs-6 text-yellow-900"
+            >JavaScript: 100%</span
+          >
+        </div>
+      </div>
+      <h5 class="mt-4"><i class="fab fa-css3-alt fs-1"></i>: CSS</h5>
+      <div class="progress m-2" style="height: 25px">
+        <div
+          id="progressCss"
+          class="progress-bar progress-bar-striped bg-red-200"
+          role="progressbar"
+          style="width: 100%"
+        >
+          <span class="badge badge-secondary fs-6 text-red-900"
+            >CSS: 100%
+          </span>
+        </div>
+      </div>
+
+      <h5 class="mt-4">
+        <img
+          src="./assets/images/hbs.png"
+          alt="hbs icon"
+          ,
+          style="width: 45px"
+        />: Handlebars
+      </h5>
+      <div class="progress m-2" style="height: 25px">
+        <div
+          id="progressHbs"
+          class="progress-bar progress-bar-striped bg-purple-200"
+          role="progressbar"
+          style="width: 100%"
+        >
+          <span class="badge badge-secondary fs-6 text-purple-900"
+            >Hbs: 100%
+          </span>
+        </div>
+      </div>
+      <h1 class="fs-5 bg-light m-0 my-4 text-success text-center">
+        <i class="fas fa-laptop-code p-2"></i>
+        Other Skills:
+
+        <span
+          class="Myskills text-center fs-5 text-muted"
+          style="height: 20px"
+        ></span>
+      </h1>
     </div>
-    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon p-3 bg-red-500 m-4" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon  bg-red-500 m-4" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>  
-</div>
-  <div class="container">
-    <div class="
+
+    <!-- Projects section -->
+    <h1
+      class="display-7 bg-dark m-0 my-4 text-primary text-center"
+      id="projects"
+    >
+      <i class="fas fa-chalkboard-teacher p-2"></i>
+      Projects
+    </h1>
+    <!-- recent projects -->
+    <div class="container-fluid bg-gray-500 d-flex justify-content-center">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators"></div>
+        <div class="carousel-inner img-thumbnail m-2 bg-blue-200 p-5">
+          <!-- cards here -->
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon p-3 bg-red-500 "
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span
+            class="carousel-control-next-icon bg-red-500 4"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="
           border border-light
-          row  row-cols-md-3
+          row row-cols-md-3
           bg-gray-100
-          justify-content-center shadow-lg project-All  
-        ">
-      <!-- add all the project cards here -->
+          justify-content-center
+          shadow-lg
+          project-All
+        "
+      >
+        <!-- add all the project cards here -->
+      </div>
     </div>
-  </div>
 
-  <!--Contact me     -->
-  <div class="container mt-5 border-dark card w-75" id="contactMe">
-    <form action="mailto:mehdi.mahmud@hotmail.com" method="post" enctype="text/plain">
-      <h1 class="fs-3 text-info border-info border-bottom">Contact Me</h1>
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="input" class="form-control" id="name" placeholder="Your Name" />
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" />
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Message</label>
-        <textarea class="form-control" type="text" name="comment" id="exampleFormControlTextarea1" rows="2"
-          placeholder="Write your message here!"></textarea>
-      </div>
+    <!--Contact me     -->
+    <div class="container mt-5 border-dark card w-75" id="contactMe">
+      <form
+        action="mailto:mehdi.mahmud@hotmail.com"
+        method="post"
+        enctype="text/plain"
+      >
+        <h1 class="fs-3 text-info border-info border-bottom">Contact Me</h1>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="input"
+            class="form-control"
+            id="name"
+            placeholder="Your Name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input type="email" class="form-control" id="exampleInputEmail1" />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Message</label>
+          <textarea
+            class="form-control"
+            type="text"
+            name="comment"
+            id="exampleFormControlTextarea1"
+            rows="2"
+            placeholder="Write your message here!"
+          ></textarea>
+        </div>
 
-      <button type="submit" value="Send" class="btn btn-primary mb-2 mt-4">Submit</button>
-    </form>
-  </div>
+        <button type="submit" value="Send" class="btn btn-primary mb-2 mt-4">
+          Submit
+        </button>
+      </form>
+    </div>
 
-  <!-- footer section -->
-  <footer class="text-center text-lg-start mt-4 bg-dark text-info">
-    <!-- Section: Social media -->
-    <section class="
+    <!-- footer section -->
+    <footer class="text-center text-lg-start mt-4 bg-dark text-info">
+      <!-- Section: Social media -->
+      <section
+        class="
           d-flex
           justify-content-center justify-content-lg-between
           p-4
           border-bottom
-        ">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with me on social networks:</span>
-      </div>
-      <div class="fs-5">
-        <a href="https://www.researchgate.net/profile/Mehdi-Mahmud" class="me-4 text-reset text-decoration-none">
-          <i class="fab fa-researchgate"></i>
-        </a>
+        "
+      >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with me on social networks:</span>
+        </div>
+        <div class="fs-5">
+          <a
+            href="https://www.researchgate.net/profile/Mehdi-Mahmud"
+            class="me-4 text-reset text-decoration-none"
+          >
+            <i class="fab fa-researchgate"></i>
+          </a>
 
-        <a href="https://www.linkedin.com/in/mehdi-mahmud/" class="me-4 text-reset text-decoration-none">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/mehdimahmud79" class="me-4 text-reset text-decoration-none">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-    </section>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
- 
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+          <a
+            href="https://www.linkedin.com/in/mehdi-mahmud/"
+            class="me-4 text-reset text-decoration-none"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/mehdimahmud79"
+            class="me-4 text-reset text-decoration-none"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-  <script src="assets/js/script.js"></script>
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
 
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
