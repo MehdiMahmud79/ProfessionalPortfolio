@@ -128,8 +128,8 @@ function creatCards(oldProjects) {
       <img src="${project.project_img}" class="card-img-top " alt="project image "/>
 
       <div class="  bg-light d-flex justify-content-around">
-        <a type="button" href="${project.gitHub_Url}" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
-        <a type="button" href="${project.homepage}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
+        <a type="button" href="${project.gitHub_Url}" class="text-blue-700 text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
+        <a type="button" href="${project.homepage}" class="text-blue-700 text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
       </div>
 
       <div class="card-body">
@@ -184,10 +184,10 @@ function creatCarousel(favProject) {
                   <div class=" w-100  d-flex justify-content-around ">
                   <a type="button" href="${
                     project.gitHub_Url
-                  }" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
+                  }" class="text-blue-700 text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
                   <a type="button" href="${
                     project.homepage
-                  }" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
+                  }" class="text-blue-700 text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
                 </div>
                </div>
               <div class="px-2 mx-0">
