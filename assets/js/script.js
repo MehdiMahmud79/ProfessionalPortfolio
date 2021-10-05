@@ -191,7 +191,7 @@ function creatCarousel(favProject) {
                 </div>
                </div>
               <div class="px-2 mx-0">
-            <h6 class="text-gray-500 py-2">${project.description}</h6>
+            <h6 class="text-gray-600 lh-lg px-4 ">${project.description}</h6>
             
           </div>
           
