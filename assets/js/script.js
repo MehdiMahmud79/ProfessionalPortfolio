@@ -1,8 +1,8 @@
 var projects = [];
 
 const log = console.log;
-var owner = "MehdiMahmud79";
-const projectsUrl = `https://api.github.com/users/${owner}/repos`;
+var user = "MehdiMahmud79";
+const projectsUrl = `https://api.github.com/users/${user}/repos`;
 
 const fetchApi = async (url) => {
   try {
@@ -71,8 +71,19 @@ const portfolioMaker = async (projectsUrl) => {
   // log(totalSum);
 
   generateProgressBars(totalSum);
-  let favProject = projects.slice(0, 4);
-  let oldProjects = projects.slice(4);
+
+  // finned pinned Repos
+  const pinnedUrl=`https://gh-pinned-repos-5l2i19um3.vercel.app/?username=${user}`
+  const  pinnedRepos= await fetchApi(pinnedUrl);
+  // log("pinned repos are ",pinnedRepos)
+  const  pinned=pinnedRepos.map(proj=>proj.repo);
+
+  let favProject = projects.filter(repo=>pinned.includes(repo.projectName));    log("pinned repos are ",favProject)
+
+  let oldProjects = projects.filter(repo=>!pinned.includes(repo.projectName));    log("older repos are ",oldProjects)
+
+  
+  // let oldProjects = projects.slice(4);
   creatCarousel(favProject);
   creatCards(oldProjects);
 };
