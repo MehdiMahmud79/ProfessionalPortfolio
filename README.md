@@ -12,7 +12,7 @@ Using Github API to generate a proffesional protfolio of my upto date projects.
 # Features
 
 ```
-* Using Github API.
+* Using Github API. Here, a request made to bring all the public repos for the requiered user. Also, another request made to only bring the pinned repository. As a result we will have to sections in the Project section for the pinned repos on the top as a "carousel" and the rest of project in a different section.
 * Using Bootstrap 5.0 for styling.
 * Using Github languages for progressing bars.
 * jQuery to write the javascript cosing.
