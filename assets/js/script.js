@@ -1,8 +1,8 @@
 var projects = [];
 
 const log = console.log;
-var owner = "MehdiMahmud79";
-const projectsUrl = `https://api.github.com/users/${owner}/repos`;
+var user = "MehdiMahmud79";
+const projectsUrl = `https://api.github.com/users/${user}/repos`;
 
 const fetchApi = async (url) => {
   try {
@@ -71,8 +71,19 @@ const portfolioMaker = async (projectsUrl) => {
   // log(totalSum);
 
   generateProgressBars(totalSum);
-  let favProject = projects.slice(0, 4);
-  let oldProjects = projects.slice(4);
+
+  // finned pinned Repos
+  const pinnedUrl=`https://gh-pinned-repos-5l2i19um3.vercel.app/?username=${user}`
+  const  pinnedRepos= await fetchApi(pinnedUrl);
+  // log("pinned repos are ",pinnedRepos)
+  const  pinned=pinnedRepos.map(proj=>proj.repo);
+
+  let favProject = projects.filter(repo=>pinned.includes(repo.projectName));    log("pinned repos are ",favProject)
+
+  let oldProjects = projects.filter(repo=>!pinned.includes(repo.projectName));    log("older repos are ",oldProjects)
+
+  
+  // let oldProjects = projects.slice(4);
   creatCarousel(favProject);
   creatCards(oldProjects);
 };
@@ -117,8 +128,8 @@ function creatCards(oldProjects) {
       <img src="${project.project_img}" class="card-img-top " alt="project image "/>
 
       <div class="  bg-light d-flex justify-content-around">
-        <a type="button" href="${project.gitHub_Url}" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
-        <a type="button" href="${project.homepage}" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
+        <a type="button" href="${project.gitHub_Url}" class="text-blue-700 text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
+        <a type="button" href="${project.homepage}" class="text-blue-700 text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
       </div>
 
       <div class="card-body">
@@ -163,7 +174,7 @@ function creatCarousel(favProject) {
 
     mycard = `
        <div class="carousel-item ${activeclass}">
-          <div class="text-center my-1"> <h5 class="display-5  text-red-900 ">${project.projectName.toUpperCase()}</h5></div>
+          <div class="text-center my-1"> <h5 class="display-5  text-red-900 ">${project.projectName}</h5></div>
           
           <div class="d-flex flex-column flex-md-row align-items-center mx-5">
                <div class="mx-2 text-center w-100 projectAll" >
@@ -173,14 +184,14 @@ function creatCarousel(favProject) {
                   <div class=" w-100  d-flex justify-content-around ">
                   <a type="button" href="${
                     project.gitHub_Url
-                  }" class="text-info text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
+                  }" class="text-blue-700 text-decoration-none"><i class="fab fa-github-alt"></i> Github</a>
                   <a type="button" href="${
                     project.homepage
-                  }" class="text-info text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
+                  }" class="text-blue-700 text-decoration-none"><i class="fab fa-internet-explorer"></i> Live</a>
                 </div>
                </div>
               <div class="px-2 mx-0">
-            <h6 class="text-gray-500 py-2">${project.description}</h6>
+            <h6 class="text-gray-600 lh-lg px-4 ">${project.description}</h6>
             
           </div>
           
