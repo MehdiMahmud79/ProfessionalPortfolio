@@ -7,7 +7,7 @@
 ![badmath](https://img.shields.io/github/stars/MehdiMahmud79/ProfessionalPortfolio)
 
 
-Using Github API to generate a proffesional protfolio of my upto date projects.
+Using Github API to generate a proffesional protfolio to have an up to date portfolio containig all of the public projects and pinned projects.
 
 # Features
 
