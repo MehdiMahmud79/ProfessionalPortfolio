@@ -19,7 +19,7 @@ const portfolioMaker = async (projectsUrl) => {
   projectsData = Data.sort((a, b) =>
     a.created_at < b.created_at ? 1 : b.created_at < a.created_at ? -1 : 0
   );
-  // log("Your projects on Gitgub were \n", projectsData);
+  log("Your projects on Gitgub were \n", projectsData);
   projects = await projectsData.map(
     async ({
       name: projectName,
@@ -142,7 +142,7 @@ function creatCards(oldProjects) {
       ${css}
       ${hbs}
       </div>
-     <small class=" bg-gray-900 rounded-bottom text-center" ><span class="text-green-400">🟢HTML-</span><span class="text-red-400">🟠CSS-</span><span class="text-yellow-400">🟡JS-</span><span class="text-purple-400">🟣HBS</span></small>
+     <small class=" bg-gray-900 rounded-bottom text-center" ><span class="text-green-400"> 🟢 HTML -</span><span class="text-red-400"> 🟠 CSS -</span><span class="text-yellow-400"> 🟡 JS -</span><span class="text-purple-400"> 🟣 HBS </span></small>
 
     </div>
 
